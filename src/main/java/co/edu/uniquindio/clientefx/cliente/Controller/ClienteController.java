@@ -56,6 +56,24 @@ public class ClienteController {
     }
 
 
+    private void agregarCliente() {
+        Cliente cliente = new Cliente();
+
+        cliente.setNombre(txtNombre.getText());
+        cliente.setApellido(txtApellido.getText());
+        cliente.setCedula(txtCedula.getText());
+        cliente.setDireccion(txtDireccion.getText());
+        cliente.setTelefono(txtTelefono.getText());
+        cliente.setEmail(txtEmail.getText());
+
+
+        txtResultado.setText(cliente.toString());
+
+
+
+    }
+
+
 
     public void geTipoCliente(ActionEvent actionEvent) {
 
@@ -71,15 +89,15 @@ public class ClienteController {
 
         if(rButtonClienteBasico.isSelected()){
             myLabel.setText(rButtonClienteBasico.getText());
-            System.out.println("Cliente Basico ");
+            System.out.println("Cliente Basico");
         }
         else if(rButtonClientePremium.isSelected()){
             myLabel.setText(rButtonClientePremium.getText());
-            System.out.println("Cliente premium ");
+            System.out.println("Cliente Premium");
         }
         else if(rButtonClienteVip.isSelected()){
             myLabel.setText(rButtonClienteVip.getText());
-            System.out.println("Cliente Vip ");
+            System.out.println("Cliente Vip");
         }
     }
 
@@ -88,9 +106,5 @@ public class ClienteController {
     @FXML
     void initialize() {
 
-    }
-
-    public void setrButtonClientePremium(RadioButton rButtonClientePremium) {
-        this.rButtonClientePremium = rButtonClientePremium;
     }
 }
